@@ -31,9 +31,9 @@
 
         this.onDraw = function (e) {
             var number = e.item.idx
-            self.wait = false
             model.shuffle()
             self.draw = model.draw(number)
+            self.wait = false
         }
 
         this.onWait = function () {
