@@ -1,11 +1,13 @@
 <spa>
     <form class="pure-g ask" if="{wait}">
         <div class="pure-u-1-3" each="{idx in selectCard}">
-            <button class="pure-button" onclick="{
-                        parent.onDraw
-                    }">
-                {idx}
-            </button>
+            <section>
+                <button class="pure-button" onclick="{
+                            parent.onDraw
+                        }">
+                    {idx}
+                </button>
+            </section>
         </div>
     </form>
     <div class="pure-g hand" if="{! wait}">

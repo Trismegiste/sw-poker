@@ -35,9 +35,16 @@ footer {
     margin-right: auto;
 }
 
-form.ask button {
+.ask section {
     margin-left: auto;
     margin-right: auto;
-    height: 190px;
+    width: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.ask button {
+    height: 170px;
     width: 140px;
 }
