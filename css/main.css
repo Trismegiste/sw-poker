@@ -34,3 +34,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+form.ask button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 190px;
+    width: 140px;
+}
