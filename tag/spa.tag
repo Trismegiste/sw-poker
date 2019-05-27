@@ -10,7 +10,9 @@
             </section>
         </div>
     </form>
-    <div class="pure-g hand" if="{! wait}">
+    <div class="pure-g hand" if="{! wait}" onclick="{
+                onWait
+            }">
         <div class="pure-u-1-3" each="{item in draw}">
             <img src="./img/White_{item}.svg" class="pure-img"/>
         </div>
@@ -32,6 +34,10 @@
             self.wait = false
             model.shuffle()
             self.draw = model.draw(number)
+        }
+
+        this.onWait = function () {
+            self.wait = true
         }
     </script>
 </spa>
