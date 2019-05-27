@@ -4,7 +4,6 @@
 Deck = function () {
     this.list = []
     this.color = ['s', 'h', 'd', 'c']
-    this.index = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']
     this.index = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5', '4', '3', '2']
     for (var c = 0; c < 4; c++) {
         for (var k in this.index) {
@@ -14,7 +13,7 @@ Deck = function () {
     this.list.push('jk_r')
     this.list.push('jk_b')
 
-    this.shuffleIteration = 10000
+    this.shuffleIteration = 100000
 }
 
 Deck.prototype.shuffle = function () {
@@ -46,7 +45,7 @@ Deck.prototype.jokerCount = function (hand) {
     return jc
 }
 
-Deck.prototype.evaluateFlush = function (hand) {
+Deck.prototype.hasFlush = function (hand) {
     var colorCount = [0, 0, 0, 0]
     for (var idx in hand) {
         var idx = this.color.indexOf(hand[idx][0])
@@ -55,5 +54,27 @@ Deck.prototype.evaluateFlush = function (hand) {
         }
     }
 
-    return colorCount
+    var maxi = colorCount.sort()[colorCount.length - 1]
+    var jc = this.jokerCount(hand)
+
+    return ((maxi + jc) >= 5)
+}
+
+Deck.prototype.kindCount = function (hand) {
+    var counter = []
+    for (var k in this.index) {
+        counter.push(0)
+    }
+
+    for (var idx in hand) {
+        var idx = this.index.indexOf(hand[idx].substr(2))
+        if (-1 !== idx) {
+            counter[idx]++
+        }
+    }
+
+    var maxi = counter.sort()[counter.length - 1]
+    var jc = this.jokerCount(hand)
+
+    return maxi + jc
 }
