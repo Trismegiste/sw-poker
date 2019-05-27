@@ -73,8 +73,7 @@ Deck.prototype.kindCount = function (hand) {
         }
     }
 
-    var maxi = counter.sort()[counter.length - 1]
-    var jc = this.jokerCount(hand)
-
-    return maxi + jc
+    return counter.sort().reverse().filter(function (a) {
+        return a > 1
+    })
 }
