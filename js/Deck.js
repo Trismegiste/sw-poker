@@ -3,16 +3,13 @@
  */
 Deck = function () {
     this.list = []
-    this.color = ['c', 'd', 'h', 's']
+    this.color = ['s', 'h', 'd', 'c']
+    this.index = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']
+    this.index = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5', '4', '3', '2']
     for (var c = 0; c < 4; c++) {
-        var current = this.color[c]
-        for (var k = 2; k <= 10; k++) {
-            this.list.push(current + '_' + k)
+        for (var k in this.index) {
+            this.list.push(this.color[c] + '_' + this.index[k])
         }
-        this.list.push(current + '_j')
-        this.list.push(current + '_q')
-        this.list.push(current + '_k')
-        this.list.push(current + '_a')
     }
     this.list.push('jk_r')
     this.list.push('jk_b')
@@ -36,4 +33,27 @@ Deck.prototype.draw = function (n) {
 
 Deck.prototype.getRandomIdx = function () {
     return Math.floor(Math.random() * this.list.length)
+}
+
+Deck.prototype.jokerCount = function (hand) {
+    var jc = 0
+    for (var idx in hand) {
+        if ((hand[idx] === 'jk_r') || (hand[idx] === 'jk_b')) {
+            jc++
+        }
+    }
+
+    return jc
+}
+
+Deck.prototype.evaluateFlush = function (hand) {
+    var colorCount = [0, 0, 0, 0]
+    for (var idx in hand) {
+        var idx = this.color.indexOf(hand[idx][0])
+        if (-1 !== idx) {
+            colorCount[idx]++
+        }
+    }
+
+    return colorCount
 }
