@@ -33,6 +33,7 @@ footer {
 .hand img {
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
 
 .ask section {

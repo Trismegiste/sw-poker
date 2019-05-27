@@ -10,11 +10,11 @@
             </section>
         </div>
     </form>
-    <div class="pure-g hand" if="{! wait}" onclick="{
-                onWait
-            }">
+    <div class="pure-g hand" if="{! wait}">
         <div class="pure-u-1-3" each="{item in draw}">
-            <img src="./img/White_{item}.svg" class="pure-img"/>
+            <img src="./img/White_{item}.svg" class="pure-img" onclick="{
+                        onWait
+                    }"/>
         </div>
     </div>
     <script>
