@@ -28,3 +28,9 @@ footer {
     font-size: 1000%;
     color: lightgray;
 }
+
+/* for cards */
+.hand img {
+    margin-left: auto;
+    margin-right: auto;
+}

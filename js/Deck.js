@@ -31,7 +31,7 @@ Deck.prototype.shuffle = function () {
 }
 
 Deck.prototype.draw = function (n) {
-    return this.list.slice(0, n)
+    return this.list.slice(0, n).sort()
 }
 
 Deck.prototype.getRandomIdx = function () {
