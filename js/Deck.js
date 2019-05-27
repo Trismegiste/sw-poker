@@ -31,13 +31,7 @@ Deck.prototype.shuffle = function () {
 }
 
 Deck.prototype.draw = function (n) {
-    var hand = this.list.slice(0, n)
-    var cards = []
-    for (var k = 0; k < n; k++) {
-        cards.push('White_' + hand[k] + '.svg')
-    }
-
-    return cards
+    return this.list.slice(0, n)
 }
 
 Deck.prototype.getRandomIdx = function () {
