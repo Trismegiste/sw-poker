@@ -1,0 +1,30 @@
+footer {
+    font-size: 60%;
+    text-align: center;
+}
+
+/* FORM */
+.form-label-aligned label {
+    text-align: right;
+    margin-right: 0.3em;
+}
+
+.pure-button.button-error {
+    background: #FC70C2; /* this is a red */
+}
+
+.pure-form input, .pure-form select, .pure-form textarea {
+    margin-bottom: 0.3em;
+}
+
+.pure-form label {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+/* for spinner */
+#waiting {
+    text-align: center;
+    font-size: 1000%;
+    color: lightgray;
+}
