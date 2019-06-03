@@ -12,17 +12,15 @@ Deck = function () {
     }
     this.list.push('jk_r')
     this.list.push('jk_b')
-
-    this.shuffleIteration = 100000
 }
 
 Deck.prototype.shuffle = function () {
-    for (var k = 0; k < this.shuffleIteration; k++) {
-        var swap1 = this.getRandomIdx()
-        var swap2 = this.getRandomIdx()
-        var tmp = this.list[swap1]
-        this.list[swap1] = this.list[swap2]
-        this.list[swap2] = tmp
+    var temp, j, i = this.list.length;
+    while (--i) {
+        j = ~~(Math.random() * (i + 1));
+        temp = this.list[i];
+        this.list[i] = this.list[j];
+        this.list[j] = temp;
     }
 }
 
